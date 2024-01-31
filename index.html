@@ -5,32 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body>
-    <nav><h2>BookHub</h2></nav>
+    <nav>
+      <h2>Book<span style="color: orange">Hub</span></h2>
+    </nav>
     <main>
-      <div id="books-container">
-        <!-- <div class="new-book-card">
-          <button type="button" id="btn-open-dialog">
-            <ion-icon name="add-circle"></ion-icon>
-          </button>
-        </div> -->
-        <!-- <div class="book-card">
-          <h2 class="book-card-title">Title of the Book</h2>
-          <small class="book-card-author">by Author Name</small>
-          <p class="book-card-review">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
-            reiciendis suscipit! Ratione ipsa non quae tempore neque, delectus
-            quibusdam mollitia. Vero tempore veniam aut ut est sapiente neque
-            incidunt minima.
-          </p>
-          <small class="book-card-page-count">Page count: 200</small>
-        </div> -->
-      </div>
+      <div id="books-container"></div>
     </main>
     <dialog>
       <form method="dialog" id="form-book-details">
+        <button type="button" id="btn-dismiss-dialog">
+          <ion-icon name="close"></ion-icon>
+        </button>
         <label for="form-book-title">Title:</label>
         <input type="text" id="form-book-title" autofocus required />
         <label for="form-book-author">Author:</label>
@@ -40,20 +34,25 @@
           <input
             type="number"
             id="form-book-page-count"
-            style="width: 50%"
+            style="display: inline-block; width: 50%"
             min="1"
             required
           />
-          <input
-            type="checkbox"
-            id="form-book-is-read"
-            style="margin-left: 2rem"
-          />
-          <label for="form-book-is-read">Read it</label>
+          <div
+            style="
+              width: 50%;
+              float: right;
+              padding: 0.3rem;
+              text-align: center;
+            "
+          >
+            <input type="checkbox" id="form-book-is-read" />
+            <label for="form-book-is-read">Read it</label>
+          </div>
         </div>
         <label for="form-book-review">Review:</label>
         <textarea name="" cols="30" rows="10" id="form-book-review"></textarea>
-        <button type="submit" style="margin-top: 1rem">Add to library</button>
+        <button type="submit" class="btn-add-to-library">Add to Library</button>
       </form>
     </dialog>
     <script
