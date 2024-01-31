@@ -8,9 +8,15 @@
     <title>Document</title>
   </head>
   <body>
+    <nav><h2>BookHub</h2></nav>
     <main>
-      <div id="book-container">
-        <div class="book-card">
+      <div id="books-container">
+        <!-- <div class="new-book-card">
+          <button type="button" id="btn-open-dialog">
+            <ion-icon name="add-circle"></ion-icon>
+          </button>
+        </div> -->
+        <!-- <div class="book-card">
           <h2 class="book-card-title">Title of the Book</h2>
           <small class="book-card-author">by Author Name</small>
           <p class="book-card-review">
@@ -20,27 +26,43 @@
             incidunt minima.
           </p>
           <small class="book-card-page-count">Page count: 200</small>
-        </div>
+        </div> -->
       </div>
     </main>
-    <form method="dialog" id="form-book-details">
-      <label for="form-book-title">Title:</label>
-      <input type="text" id="form-book-title" />
-      <label for="form-book-author">Author:</label>
-      <input type="text" id="form-book-author" />
-      <label for="form-book-page-count">Page count:</label>
-      <div style="padding: 0 0 0.5rem 0">
-        <input type="number" id="form-book-page-count" style="width: 50%" />
-        <input
-          type="checkbox"
-          id="form-book-is-read"
-          style="margin-left: 2rem"
-        />
-        <label for="form-book-is-read">Read it</label>
-      </div>
-      <label for="form-book-review">Review:</label>
-      <textarea name="" cols="30" rows="10" id="form-book-review"></textarea>
-      <button type="submit" style="margin-top: 1rem">Add to library</button>
-    </form>
+    <dialog>
+      <form method="dialog" id="form-book-details">
+        <label for="form-book-title">Title:</label>
+        <input type="text" id="form-book-title" autofocus required />
+        <label for="form-book-author">Author:</label>
+        <input type="text" id="form-book-author" required />
+        <label for="form-book-page-count">Page count:</label>
+        <div style="padding: 0 0 0.5rem 0">
+          <input
+            type="number"
+            id="form-book-page-count"
+            style="width: 50%"
+            min="1"
+            required
+          />
+          <input
+            type="checkbox"
+            id="form-book-is-read"
+            style="margin-left: 2rem"
+          />
+          <label for="form-book-is-read">Read it</label>
+        </div>
+        <label for="form-book-review">Review:</label>
+        <textarea name="" cols="30" rows="10" id="form-book-review"></textarea>
+        <button type="submit" style="margin-top: 1rem">Add to library</button>
+      </form>
+    </dialog>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>
